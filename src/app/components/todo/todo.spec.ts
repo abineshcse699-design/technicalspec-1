@@ -1,17 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { HhhComponent } from './hhh';
+import { TodoComponent } from './todo';
 
-describe('Hhh', () => {
-  let component: HhhComponent;
-  let fixture: ComponentFixture<HhhComponent>;
-  beforeEach(async () => {
+describe('Todo', () => {
+  let component: TodoComponent;
+  let fixture: ComponentFixture<TodoComponent>;
+  beforeEach(async () =>
+     {
     await TestBed.configureTestingModule({
-      imports: [HhhComponent]
+      imports: [TodoComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(HhhComponent);
+    fixture = TestBed.createComponent(TodoComponent);
     component = fixture.componentInstance;
     await fixture.whenStable();
   });

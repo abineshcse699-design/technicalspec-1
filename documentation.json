@@ -361,6 +361,41 @@
             "duplicateName": "RadioOption-1"
         },
         {
+            "name": "Todo",
+            "id": "interface-Todo-71fe438c2723d1ce359d2635e6c8eb1c11d7365df36bab84570c219f9ae1e1eb2a776d4eb599717c24772f8bf140567bc667027530fdf66a847d932e14db3c71",
+            "file": "src/app/components/todo/todo.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\r\nimport { FormsModule } from '@angular/forms';\r\nimport { CommonModule } from '@angular/common';\r\n\r\nexport interface Todo {\r\n  title: string;\r\n  done: boolean;\r\n}\r\n\r\n@Component({\r\n\r\n  selector: 'app-todo',\r\n  imports: [FormsModule,CommonModule],\r\n  templateUrl: './todo.html',\r\n  styleUrls: ['./todo.css']\r\n\r\n\r\n})\r\n\r\nexport class TodoComponent {\r\n  @Input() todo!: Todo;\r\n  @Output() onDone = new EventEmitter<string>();\r\n\r\n  toggle() {\r\n    this.onDone.emit('hi');\r\n  }\r\n}\r\n",
+            "properties": [
+                {
+                    "name": "done",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "boolean",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 7
+                },
+                {
+                    "name": "title",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 6
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 172,
+            "methods": [],
+            "extends": []
+        },
+        {
             "name": "User",
             "id": "interface-User-d4821beac0e4a852e513391b7470981c4353fdd95a18628bb68136c8695b489ee15b926e2e5031bc26cf30e1508e0a362c3ee13a06734702b4d15af140e485d5",
             "file": "src/stories/user.ts",
@@ -1642,6 +1677,88 @@
             "stylesData": "",
             "extends": [],
             "templateData": "<!-- Header -->\n\n<app-header></app-header>\n\n<!-- Top navigation -->\n<div class=\"flex justify-between items-center mt-4 mb-4 w-[84%] ml-[112px] text-sm text-gray-600\">\n\n  <a mat-button class=\"flex items-center text-green-900 gap-1\">\n    <mat-icon>arrow_back</mat-icon>\n    Back to TG Dashboard\n  </a>\n\n<button mat-button class=\"flex items-center text-green-900 gap-1\">\n  Logout\n  <svg\n    xmlns=\"http://www.w3.org/2000/svg\"\n    viewBox=\"0 -960 960 960\"\n    class=\"w-6 h-7 fill-green-900\"\n  >\n    <path\n      d=\"M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h280v80H200Zm440-160-55-58 102-102H360v-80h327L585-622l55-58 200 200-200 200Z\"\n    />\n  </svg>\n</button>\n\n\n</div>\n\n<!-- Main card (hide if showSubjectOnly, showMaterialOnly, or showExaminationOnly) -->\n<div class=\" bg-gray-50 p-8\" *ngIf=\"showSubjectOnly\">\n  <div class=\"max-w-6xl mx-auto bg-white rounded-lg shadow-sm border border-gray-200 p-6\">\n\n    <!-- TOP ROW -->\n    <div class=\"grid grid-cols-1 gap-4\">\n\n      <div\n        class=\"ones grid items-center gap-6\"\n        style=\"grid-template-columns: 280px 1fr auto;\"\n      >\n\n        <!-- Left -->\n        <div class=\"space1\">\n          <label class=\"text-lg text-gray-500 block\">\n            Main Common Name(s):\n          </label>\n          <h2 class=\"text-lg font-semibold   text-green-900\">\n            European Pear\n          </h2>\n        </div>\n\n        <!-- Middle -->\n        <div class=\"space\">\n          <label class=\"text-lg text-gray-500 block\">\n            UPOV Code(s):\n          </label>\n          <p class=\"text-lg font-semibold text-green-900\">\n            PYRUS_COM; PYRUS_BCO; PYRUS_CPB; PYRUS_CUS\n          </p>\n        </div>\n\n        <!-- Button -->\n  <button\n  mat-raised-button\n  class=\"\n    !bg-green-900\n    !rounded-full\n    h-[38px]\n    px-3\n    flex items-center gap-1\n    shadow-none\n  \"\n>\n  <mat-icon class=\"!text-lime-300 text-[18px]\">\n    check_circle\n  </mat-icon>\n\n  <span class=\"text-sm font-medium text-lime-300\">\n    Submit\n  </span>\n\n</button>\n\n\n      </div>\n    </div>\n\n    <!-- BOTTOM SECTION (unchanged – already correct) -->\n    <div class=\"mt-6 flex items-center justify-between border-t border-gray-200 pt-6\">\n      <button\n        (click)=\"isExpanded = !isExpanded\"\n        class=\"flex items-center gap-2 text-gray-700 hover:text-gray-900 transition-colors bg-transparent border-none cursor-pointer\"\n      >\n        <mat-icon [class.rotate-180]=\"isExpanded\" class=\"transition-transform\">\n          expand_more\n        </mat-icon>\n        <span class=\"text-sm font-medium\">More details</span>\n      </button>\n\n      <div class=\"text-right\">\n        <div class=\"text-xs text-gray-500\">TG/export_test_2</div>\n        <div class=\"text-xs text-gray-500\">\n          Saved: 02 Dec, 2025 - 31 Dec, 2025\n        </div>\n      </div>\n    </div>\n\n    <!-- EXPANDABLE CONTENT (unchanged) -->\n    <div *ngIf=\"isExpanded\" class=\"mt-6 pt-6 border-t border-gray-200\">\n      <div class=\"grid grid-cols-1 md:grid-cols-2 gap-6\">\n        <div>\n          <h3 class=\"text-sm font-semibold text-gray-700 mb-2\">\n            Additional Information\n          </h3>\n          <p class=\"text-sm text-gray-600\">\n            More details about the European Pear variety would appear here.\n          </p>\n        </div>\n        <div>\n          <h3 class=\"text-sm font-semibold text-gray-700 mb-2\">\n            Classification Details\n          </h3>\n          <p class=\"text-sm text-gray-600\">\n            UPOV classification and variety characteristics.\n          </p>\n        </div>\n      </div>\n    </div>\n\n  </div>\n</div>\n\n\n\n<div class=\"h-screen flex  overflow-y-auto\">\n\n\n  <!-- ================= SIDEBAR ================= -->\n<!-- ================= SIDEBAR ================= -->\n<aside class=\"w-48 ml-27 bg-white border-r border-gray-200 mt-6 hidden md:block\">\n\n  <mat-nav-list class=\"text-m\">\n\n    <!-- Title -->\n    <div class=\"px-4 py-3 font-semibold text-gray-500\">\n      Chapters\n    </div>\n\n    <!-- Chapter Items -->\n    <a\n      mat-list-item\n      *ngFor=\"let chapter of chapters\"\n\n      (click)=\"setActiveChapter(chapter)\"\n      class=\"mx-2 my-0.5 flex items-center gap-3 rounded-md px-3 py-2 cursor-pointer\n             transition-colors\n             hover:bg-gray-100\"\n      [ngClass]=\"{\n        'bg-emerald-50 border-l-4 border-emerald-500': chapter.active\n      }\"\n    >\n      <!-- Number Circle -->\n   <span\n  class=\"flex h-7 w-7 items-center justify-center rounded-full border text-xs font-semibold text-gray-700\"\n  style=\"border: 2px solid goldenrod\"\n  [ngClass]=\"{\n    'bg-emerald-500 text-white': chapter.active\n  }\"\n>\n  {{ chapter.id }}\n</span>\n\n\n      <!-- Label -->\n     <span\n  class=\"text-[16px] leading-tight text-gray-700\"\n  [ngClass]=\"{\n    'text-emerald-600 font-semibold': chapter.active\n  }\"\n>\n  {{ chapter.label }}\n</span>\n\n    </a>\n\n    <!-- Collapse -->\n    <div\n      class=\"mt-2 flex items-center gap-2 px-4 py-3 text-sm font-medium\n             text-emerald-600 border-t border-gray-200 cursor-pointer\"\n    >\n      <mat-icon class=\"text-base\">chevron_left</mat-icon>\n      Collapse\n    </div>\n\n  </mat-nav-list>\n</aside>\n\n\n\n<main class=\"flex-1 p-6 mr-9  \">\n\n<div class=\"max-w-5xl mx-auto p-6 mr-15  bg-white space-y-6\" *ngIf=\"showSubjectOnly &&  !showMaterialOnly\">\n\n  <div class=\"mb-6\">\n  <h1 class=\"text-2xl font-semibold text-green-900\">\n    {{ sectionTitle1 }}\n  </h1>\n</div>\n\n  <!-- Section 1: Related links and main sentence -->\n  <div class=\"border-b border-gray-200 pb-4 \" *ngIf=\"showSubjectOnly && !showMaterialOnly || chapters[0].active\" >\n\n    <!-- Related links -->\n    <div class=\"text-sm text-gray-700 mb-2\">\n      <span class=\"font-medium\">Related links:</span>\n\n      <a class=\"ml-1 text-green-900 hover:underline inline-flex items-center gap-1\" href=\"#\">\n        More than one species (GN3)\n        <svg class=\"w-4 h-4\" fill=\"currentColor\" viewBox=\"0 0 20 20\">\n          <path d=\"M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z\"/>\n          <path d=\"M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z\"/>\n        </svg>\n      </a>\n\n      <a class=\"ml-2 text-green-900 hover:underline inline-flex items-center gap-1\" href=\"#\">\n        Different types or groups within a species or genus (GN4)\n        <svg class=\"w-4 h-4\" fill=\"currentColor\" viewBox=\"0 0 20 20\">\n          <path d=\"M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z\"/>\n          <path d=\"M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z\"/>\n        </svg>\n      </a>\n\n      <a class=\"ml-2 text-green-900 hover:underline inline-flex items-center gap-1\" href=\"#\">\n        Family name (GN5)\n        <svg class=\"w-4 h-4\" fill=\"currentColor\" viewBox=\"0 0 20 20\">\n          <path d=\"M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z\"/>\n          <path d=\"M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z\"/>\n        </svg>\n      </a>\n      <br>\n\n      <a class=\"text-green-900 hover:underline inline-flex items-center gap-1\" href=\"#\">\n        Guidance for New Types and Species (GN6)\n        <svg class=\"w-4 h-4\" fill=\"currentColor\" viewBox=\"0 0 20 20\">\n          <path d=\"M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z\"/>\n          <path d=\"M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z\"/>\n        </svg>\n      </a>\n    </div>\n\n    <!-- Main sentence with icon -->\n    <div class=\"flex justify-between items-start mt-4\">\n      <p class=\"text-base text-gray-800 leading-snug\">\n        These Test Guidelines apply to all varieties of\n        <span class=\"italic\">Malpighia emarginata</span> DC.\n        <br />\n        Continue Sentence\n      </p>\n\n      <svg class=\"w-10 h-5 text-green-900 mb-7 mr-10\" fill=\"currentColor\" viewBox=\"0 0 20 20\">\n        <path d=\"M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z\"/>\n        <path d=\"M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z\"/>\n      </svg>\n    </div>\n\n  </div>\n\n\n\n  <!-- Section 2: Clarification question -->\n\n<div class=\"max-w-5xl text-gray-800\" >\n\n  <!-- Question -->\n  <p class=\"text-sm leading-relaxed mb-2\">\n    Should clarification be provided that any other species or hybrids not explicitly covered\n    by these Test Guidelines should be treated according <br> to the provisions of document\n    TGP/12 \"Guidance for New Types and Species\"\n    <span class=\"text-red-500\">*</span>\n  </p>\n\n  <!-- Yes / No -->\n  <mat-radio-group class=\"flex gap-6 ml-[28%] mb-4\">\n    <mat-radio-button value=\"yes\">Yes</mat-radio-button>\n    <mat-radio-button value=\"no\">No</mat-radio-button>\n  </mat-radio-group>\n\n  <!-- Guidance sentence with inline input -->\n <!-- Guidance sentence with inline input -->\n<!-- Guidance sentence with inline input -->\n<div class=\"flex flex-wrap items-baseline gap-x-1 gap-y-1 text-sm text-gray-700\">\n  <span>Guidance on the use of Test Guidelines for</span>\n\n  <input\n    type=\"text\"\n    value=\"interspec. hybrids\"\n    class=\"border border-gray-300 bg-blue-50 rounded px-2 py-0.5 text-sm focus:outline-none focus:border-blue-500 w-40\"\n  />\n\n  <span>that are not explicitly covered by Test Guidelines is provided in</span>\n  <span>document TGP/13 \"Guidance for New Types and Species\"</span>\n</div>\n\n\n  <!-- Add Paragraph button -->\n <!-- Add Paragraph button -->\n<button class=\"rounded-full px-4 py-2 border border-yellow-400 text-green-900 hover:bg-gray-50 flex items-center gap-2 text-sm\">\n  <svg class=\"w-4 h-4\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\">\n    <circle cx=\"12\" cy=\"12\" r=\"10\" stroke-width=\"2\"/>\n    <path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M12 8v8m-4-4h8\"/>\n  </svg>\n  Add Paragraph\n</button>\n\n</div>\n\n  <!-- Section 3: Additional characteristics question -->\n  <div class=\"max-w-4xl text-gray-700 text-sm  \">\n\n  <!-- Question with inline radio buttons -->\n  <div class=\"flex flex-wrap items-center \">\n    <span>Might it be necessary to add additional characteristics or additional states of expressions for ornamental, fruit, industrial, vegetable, agricultural or other varieties?  <span class=\"text-red-500\">*</span> </span>\n\n\n     <mat-radio-group class=\"flex gap-6 ml-[29%] mb-4 mb-8\">\n    <mat-radio-button value=\"yes\">Yes</mat-radio-button>\n    <mat-radio-button value=\"no\">No</mat-radio-button>\n  </mat-radio-group>\n  </div>\n\n  <!-- Second sentence with inline input -->\n  <div class=\"flex flex-wrap items-baseline  \">\n    <span>In the case of</span>\n\n    <input\n      type=\"text\"\n      value=\"agricultural\"\n      class=\"border border-gray-300 bg-blue-50 rounded px-2 py-0.5 text-m focus:outline-none focus:border-blue-500 w-48\"\n    />\n\n    <span>, in particular, it may be necessary to use additional characteristics or additional states of </span>\n     <span>expression to those included in the Table of Characteristics in order to examine Distinctness, Uniformity and Stability.</span>\n  </div>\n\n  <!-- Preview section -->\n  <div class=\"bg-whitesmoke-500 border border-orange-200 rounded px-3 py-2 mt-4\">\n    <div class=\"flex items-center gap-2 text-orange-600 font-medium mb-2\">\n      <svg class=\"w-4 h-4\" fill=\"currentColor\" viewBox=\"0 0 20 20\">\n        <path d=\"M10 12a2 2 0 100-4 2 2 0 000 4z\"/>\n        <path fill-rule=\"evenodd\" d=\"M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z\" clip-rule=\"evenodd\"/>\n      </svg>\n      <span>PREVIEW</span>\n    </div>\n    <p class=\"text-gray-500 text-sm\">\n      1.1 These Test Guidelines apply to all varieties of Argania spinosa (L.) Skeels. Continue Sentence\n    </p>\n  </div>\n\n</div>\n\n</div>\n\n\n\n<div class=\"mb-6\" *ngIf=\"!showSubjectOnly && showMaterialOnly\">\n  <h1 class=\"text-2xl font-semibold text-green-900\">\n    {{ sectionTitle }}\n  </h1>\n</div>\n\n<mat-accordion class=\"max-w-5xl flex flex-col gap-4\" *ngIf=\"!showSubjectOnly && !showExaminationOnly\">\n\n  <mat-expansion-panel\n    *ngFor=\"let panel of panels\"\n    [expanded]=\"panel.expanded\"\n    class=\"mat-elevation-z0\">\n\n    <mat-expansion-panel-header togglePosition=\"before\">\n      <mat-panel-title class=\"font-semibold title-indent\">\n        {{ panel.title }}\n      </mat-panel-title>\n    </mat-expansion-panel-header>\n\n    <!-- EMPTY PANEL -->\n    <ng-container *ngIf=\"panel.type === 'empty'\">\n      <!-- future content -->\n    </ng-container>\n\n    <!-- RADIO PANEL -->\n    <ng-container *ngIf=\"panel.type === 'radio'\">\n\n      <div class=\"p-4 space-y-4\">\n\n        <p class=\"text-sm text-gray-600\">\n          {{ panel.description }}\n        </p>\n\n        <mat-radio-group\n          class=\"flex flex-col gap-3\"\n          [value]=\"panel.selectedValue\"\n          (change)=\"onRadioChange(panel, $event.value)\">\n\n          <mat-radio-button\n            *ngFor=\"let option of panel.options\"\n            [value]=\"option.value\">\n\n            {{ option.label }}\n\n          </mat-radio-button>\n        </mat-radio-group>\n\n        <mat-card class=\"bg-gray-50 border mat-elevation-z0\">\n          <mat-card-header>\n            <mat-card-title class=\"text-sm font-semibold text-orange-600\">\n              PREVIEW\n            </mat-card-title>\n          </mat-card-header>\n\n          <mat-card-content class=\"text-sm text-gray-600\">\n            {{ panel.previewText }}\n          </mat-card-content>\n        </mat-card>\n\n      </div>\n\n    </ng-container>\n\n  </mat-expansion-panel>\n\n</mat-accordion>\n\n\n\n<div class=\"max-w-5xl space-y-6\" *ngIf=\"showExaminationOnly\">\n\n  <!-- Section Title -->\n  <h2 class=\"text-lg font-semibold text-green-800\">\n    {{ methodOfExamination.title }}\n  </h2>\n\n  <mat-accordion>\n\n    <mat-expansion-panel\n      *ngFor=\"let section of methodOfExamination.sections\"\n      [expanded]=\"section.expanded\"\n      class=\"mat-elevation-z0 white-panel\"\n    >\n\n      <mat-expansion-panel-header togglePosition=\"before\">\n        <mat-panel-title class=\"font-semibold title-indent\">\n          {{ section.id }} {{ section.title }}\n        </mat-panel-title>\n      </mat-expansion-panel-header>\n\n      <div class=\"p-2 space-y-4\">\n\n        <!-- Related link -->\n        <p *ngIf=\"section.relatedLink\" class=\"text-sm text-gray-600\">\n          Related links:\n          <a\n            [href]=\"section.relatedLink.url\"\n            class=\"text-green-600 underline inline-flex items-center gap-1\"\n          >\n            {{ section.relatedLink.text }}\n            <mat-icon class=\"text-sm\">open_in_new</mat-icon>\n          </a>\n        </p>\n\n        <!-- Section Items -->\n        <ng-container *ngFor=\"let item of section.items\">\n\n          <!-- TEXT ONLY -->\n          <h4\n            *ngIf=\"item.type === 'text'\"\n            class=\"font-semibold title-indent\"\n          >\n            {{ item.id }} {{ item.title }}\n          </h4>\n\n          <!-- GROWING CYCLE -->\n          <div *ngIf=\"item.type === 'cycle'\" class=\"space-y-2\">\n            <h4 class=\"font-semibold title-indent\">\n              {{ item.id }} {{ item.title }}\n            </h4>\n\n            <mat-radio-group\n              [(ngModel)]=\"form.growingCycle\"\n              class=\"flex flex-col gap-2\"\n            >\n              <mat-radio-button\n                *ngFor=\"let opt of item.options\"\n                [value]=\"opt.value\"\n              >\n                {{ opt.label }}\n              </mat-radio-button>\n            </mat-radio-group>\n\n            <div\n              *ngIf=\"form.growingCycle === 'two'\"\n              class=\"ml-6 flex flex-col gap-2\"\n            >\n              <mat-radio-button\n                *ngFor=\"let sub of item.subOptions\"\n                [value]=\"sub.value\"\n                [(ngModel)]=\"form.cycleType\"\n              >\n                {{ sub.label }}\n              </mat-radio-button>\n            </div>\n          </div>\n\n          <!-- FRUIT SECTION -->\n          <div *ngIf=\"item.type === 'fruit'\" class=\"space-y-3\">\n            <h4 class=\"font-semibold title-indent\">\n              {{ item.id }} {{ item.title }}\n            </h4>\n\n            <p class=\"text-sm text-gray-700\">\n              {{ item.question }}\n            </p>\n\n            <mat-radio-group\n              [(ngModel)]=\"form.satisfactoryCrop\"\n              class=\"flex gap-6\"\n            >\n              <mat-radio-button value=\"yes\">Yes</mat-radio-button>\n              <mat-radio-button value=\"no\">No</mat-radio-button>\n            </mat-radio-group>\n\n            <mat-radio-group\n              [(ngModel)]=\"form.fruitType\"\n              class=\"flex flex-col gap-2 mt-2\"\n            >\n              <mat-radio-button\n                *ngFor=\"let f of item.fruitTypes\"\n                [value]=\"f.value\"\n              >\n                {{ f.label }}\n                <span class=\"text-green-600 font-medium\">\n                  ({{ f.code }})\n                </span>\n              </mat-radio-button>\n            </mat-radio-group>\n          </div>\n\n        </ng-container>\n\n      </div>\n    </mat-expansion-panel>\n\n  </mat-accordion>\n</div>\n\n<div class=\"max-w-5xl flex flex-col gap-4\" *ngIf=\"showExaminationOnly\" >\n\n  <!-- ================= PREVIEW HEADING ================= -->\n  <h4 class=\"font-semibold title-indent\">\n    {{ previewSection.heading }}\n  </h4>\n\n  <!-- ================= PREVIEW CARD ================= -->\n  <mat-card class=\"bg-gray-50 mat-elevation-z0 border\">\n    <mat-card-header>\n      <mat-card-title class=\"text-sm font-semibold text-orange-600\">\n        PREVIEW\n      </mat-card-title>\n    </mat-card-header>\n\n    <mat-card-content class=\"text-sm text-gray-700 space-y-3\">\n\n      <!-- Paragraphs -->\n      <p *ngFor=\"let text of previewSection.paragraphs\">\n        {{ text }}\n      </p>\n\n      <!-- Inline input paragraph -->\n      <p class=\"leading-6\">\n        3.1.3 In particular, it is essential that the\n        <input\n          type=\"text\"\n          [(ngModel)]=\"previewSection.inlineInputText\"\n          class=\"inline-mat-input\"\n        />\n        produce a satisfactory crop of fruit in each of the two growing cycles.\n      </p>\n\n    </mat-card-content>\n  </mat-card>\n\n  <!-- ================= REUSABLE EXPANSION PANELS ================= -->\n  <mat-expansion-panel\n    *ngFor=\"let panel of simplePanels\"\n    class=\"mat-elevation-z0 border-b\"\n  >\n    <mat-expansion-panel-header togglePosition=\"before\">\n      <mat-panel-title class=\"font-semibold title-indent\">\n        {{ panel.title }}\n      </mat-panel-title>\n    </mat-expansion-panel-header>\n  </mat-expansion-panel>\n\n</div>\n\n\n</main>\n\n\n</div>\n\n\n\n\n\n\n\n"
+        },
+        {
+            "name": "TodoComponent",
+            "id": "component-TodoComponent-71fe438c2723d1ce359d2635e6c8eb1c11d7365df36bab84570c219f9ae1e1eb2a776d4eb599717c24772f8bf140567bc667027530fdf66a847d932e14db3c71",
+            "file": "src/app/components/todo/todo.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-todo",
+            "styleUrls": [
+                "./todo.css"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./todo.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "todo",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 21,
+                    "type": "Todo",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "onDone",
+                    "defaultValue": "new EventEmitter<string>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 22,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "toggle",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 24,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [
+                {
+                    "name": "FormsModule",
+                    "type": "module"
+                },
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\r\nimport { FormsModule } from '@angular/forms';\r\nimport { CommonModule } from '@angular/common';\r\n\r\nexport interface Todo {\r\n  title: string;\r\n  done: boolean;\r\n}\r\n\r\n@Component({\r\n\r\n  selector: 'app-todo',\r\n  imports: [FormsModule,CommonModule],\r\n  templateUrl: './todo.html',\r\n  styleUrls: ['./todo.css']\r\n\r\n\r\n})\r\n\r\nexport class TodoComponent {\r\n  @Input() todo!: Todo;\r\n  @Output() onDone = new EventEmitter<string>();\r\n\r\n  toggle() {\r\n    this.onDone.emit('hi');\r\n  }\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./todo.css"
+                }
+            ],
+            "stylesData": "",
+            "extends": [],
+            "templateData": "\r\n\r\n\r\n<p>\r\n  <input\r\n    type=\"checkbox\"\r\n    [(ngModel)]=\"todo.done\"\r\n    (change)=\"toggle()\"\r\n  />\r\n  {{ todo.title }}\r\n</p>\r\n"
         }
     ],
     "modules": [],
@@ -1756,6 +1873,24 @@
                 "name": "App",
                 "coveragePercent": 0,
                 "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/todo/todo.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "TodoComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/todo/todo.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "Todo",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
                 "status": "low"
             },
             {
