@@ -9,7 +9,6 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatNavList } from '@angular/material/list';
 import{MatFormFieldModule} from '@angular/material/form-field';
 import { Header } from "../header/header";
-import { Footer } from "../footer/footer";
 
 @Component({
   selector: 'app-hhh',
@@ -23,8 +22,7 @@ import { Footer } from "../footer/footer";
     MatRadioModule,
     MatCardModule,
     MatIconModule,
-    Header,
-    Footer
+    Header
 ],
   templateUrl: './hhh.html',
   styleUrls: ['./hhh.css']
@@ -36,7 +34,7 @@ export class HhhComponent {
   // =================================================
   // SIDEBAR : CHAPTERS
   // =================================================
-  
+
   chapters = [
     { id: '01', label: 'Subject', active: false },
     { id: '02', label: 'Material', active: true },

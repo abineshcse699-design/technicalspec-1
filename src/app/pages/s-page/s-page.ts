@@ -9,7 +9,6 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatNavList } from '@angular/material/list';
 import{MatFormFieldModule} from '@angular/material/form-field';
 import { Header } from "../header/header";
-import { Footer } from "../footer/footer";
 
 
 @Component({
@@ -24,8 +23,7 @@ import { Footer } from "../footer/footer";
     MatRadioModule,
     MatCardModule,
     MatIconModule,
-    Header,
-    Footer
+    Header
 ],
   templateUrl: './s-page.html',
   styleUrls: ['./s-page.css']
