@@ -1,0 +1,8 @@
+<div
+  class="chapter-item"
+  [class.active]="active"
+  (click)="select.emit()"
+>
+  <span class="circle">{{ id }}</span>
+  <span class="label">{{ label }}</span>
+</div>

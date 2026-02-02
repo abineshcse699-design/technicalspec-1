@@ -51,6 +51,7 @@
               "extractLicenses": false,
               "sourceMap": true
             }
+            
           },
           "defaultConfiguration": "production"
         },
@@ -82,7 +83,9 @@
               "."
             ],
             "port": 6006
+
           }
+
         },
         "build-storybook": {
           "builder": "@storybook/angular:build-storybook",

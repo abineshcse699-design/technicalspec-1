@@ -1,0 +1,20 @@
+<div class="question-block">
+  <p class="question">
+    {{ question }}
+    <span *ngIf="required" class="required">*</span>
+  </p>
+
+  <mat-radio-group class="options">
+    <mat-radio-button
+      (change)="onChange(true)"
+      [checked]="selected === true">
+      Yes
+    </mat-radio-button>
+
+    <mat-radio-button
+      (change)="onChange(false)"
+      [checked]="selected === false">
+      No
+    </mat-radio-button>
+  </mat-radio-group>
+</div>

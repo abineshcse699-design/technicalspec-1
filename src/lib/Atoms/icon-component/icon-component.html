@@ -1,0 +1,26 @@
+<!-- Material Icon -->
+<mat-icon
+  *ngIf="name"
+  class="upov-icon"
+  [style.fontSize.px]="size"
+  [style.color]="color"
+  [attr.aria-label]="ariaLabel"
+>
+  {{ name }}
+</mat-icon>
+
+<!-- SVG Icon -->
+<svg
+  *ngIf="svgPath && !name"
+  class="upov-icon"
+  viewBox="0 0 960 960"
+  [style.width.px]="size"
+  [style.height.px]="size"
+  [style.color]="color"
+  [attr.aria-label]="ariaLabel"
+>
+  <path
+    [attr.d]="svgPath"
+    fill="currentColor"
+  ></path>
+</svg>
