@@ -27,7 +27,7 @@ import { MatButton } from '@angular/material/button';
   template: `
     <div class="page-container">
 
-      <h1 class="page-title">Organisms</h1>
+      <h1>Organisms</h1>
 
       <!-- ================= HEADER ================= -->
       <section class="section">
@@ -40,7 +40,7 @@ import { MatButton } from '@angular/material/button';
         <upov-header [navigation]="[]"></upov-header>
       </section>
 
-      <!-- ================= HERO : SIGNAL INPUTS ================= -->
+      <!-- ================= HERO – INPUT ONLY ================= -->
       <section class="section">
         <h2>Hero – Signal Inputs</h2>
         <upov-hero-section
@@ -49,50 +49,89 @@ import { MatButton } from '@angular/material/button';
         </upov-hero-section>
       </section>
 
-    </div>
-
-    <!-- ================================================= -->
-    <!-- 🔥 GENIE DATABASE HERO (FULL WIDTH – FIXED) -->
-    <!-- ================================================= -->
-    <section class="genie-hero-wrapper">
-      <upov-hero-section
-        class="gradient-bg-lime-forest gradient-opacity-30 gradient-right-left genie-hero">
-
-        <div class="genie-hero-inner">
+      <!-- ================= HERO – CONTENT PROJECTION ================= -->
+      <section class="section">
+        <h2>Hero – GENIE Database</h2>
+        <upov-hero-section
+          class="gradient-bg-lime-forest gradient-opacity-30 gradient-right-left">
 
           <h1 hero-title>GENIE <em>Database</em></h1>
 
           <p hero-subtitle>
-            Search by <strong>specie</strong> or <strong>authority</strong>.<br />
+            Search by <strong>species</strong> or <strong>authority</strong>.
+            <br />
             <span class="upov-text-small upov-text-muted">
-              You can search in English, German, Spanish or French.
+              English, German, Spanish and French supported.
             </span>
           </p>
 
-          <div hero-content class="genie-search-row">
+          <div hero-content class="hero-search">
             <upov-search-input
               placeholder="Search"
               [toggleOptions]="searchOptions">
             </upov-search-input>
 
-            <button
-              matButton
-              upovButton="primary"
-              class="genie-search-btn">
-              Search
-            </button>
+            <button matButton upovButton="primary">Search</button>
           </div>
+        </upov-hero-section>
+      </section>
 
-        </div>
-      </upov-hero-section>
-    </section>
-
-    <div class="page-container">
-
-      <!-- ================= HERO : TITLE ONLY ================= -->
+      <!-- ================= HERO – SIMPLE ================= -->
       <section class="section">
         <h2>Hero – Title Only</h2>
         <upov-hero-section [title]="'GENIE Database'"></upov-hero-section>
+      </section>
+
+      <!-- ================= HERO – ADVANCED ================= -->
+      <section class="section">
+        <h2>Hero – Advanced Rich Content</h2>
+        <upov-hero-section class="gradient-bg-forest-pine gradient-opacity-75">
+
+          <h1 hero-title>
+            Advanced <em>Hero</em> Content
+          </h1>
+
+          <p hero-subtitle>
+            Supports <strong>bold</strong>, <em>italic</em>,
+            <a href="#">links</a> and custom layouts.
+          </p>
+
+          <div hero-content class="hero-search">
+            <upov-search-input
+              placeholder="Search"
+              [toggleOptions]="searchOptions">
+            </upov-search-input>
+
+            <button matButton upovButton="primary">Search</button>
+          </div>
+
+          <div class="hero-actions">
+            <button matButton upovButton="primary">Primary</button>
+            <button matButton upovButton="secondary">Secondary</button>
+            <button matButton upovButton="accent">Tertiary</button>
+          </div>
+
+        </upov-hero-section>
+      </section>
+
+      <!-- ================= HERO – COMPARISON ================= -->
+      <section class="section comparison-grid">
+        <upov-hero-section
+          [title]="'Input Title'"
+          [subtitle]="'Controlled by inputs'"
+          class="border-green">
+          <div hero-content>
+            <button matButton upovButton="primary">Action</button>
+          </div>
+        </upov-hero-section>
+
+        <upov-hero-section class="border-orange">
+          <h1 hero-title>Projected <em>Title</em></h1>
+          <p hero-subtitle>Projected subtitle with markup</p>
+          <div hero-content>
+            <button matButton upovButton="accent">Different Action</button>
+          </div>
+        </upov-hero-section>
       </section>
 
       <!-- ================= FOOTER ================= -->
@@ -102,7 +141,7 @@ import { MatButton } from '@angular/material/button';
       </section>
 
       <section class="section">
-        <h2>Footer – With Inputs</h2>
+        <h2>Footer – Inputs</h2>
         <upov-footer
           [socialLinks]="socialLinks"
           [footerLinks]="footerLinks">
@@ -112,9 +151,7 @@ import { MatButton } from '@angular/material/button';
       <section class="section">
         <h2>Footer – Rich Content</h2>
         <upov-footer>
-          <strong>
-            International Union for the Protection of New Varieties of Plants (UPOV)
-          </strong>
+          <strong>International Union for the Protection of New Varieties of Plants (UPOV)</strong>
           <br />
           <span class="upov-text-small upov-text-muted">
             © 2025 UPOV. All rights reserved.
@@ -125,78 +162,66 @@ import { MatButton } from '@angular/material/button';
     </div>
   `,
   styles: `
-    /* ================= PAGE WIDTH ================= */
     .page-container {
       max-width: 1200px;
       margin: 0 auto;
       padding: 0 1rem 4rem;
     }
 
-    .page-title {
-      margin-bottom: 3rem;
-    }
-
-    /* ================= SECTIONS ================= */
     .section {
       margin-bottom: 4rem;
+    }
+
+    h1 {
+      margin-bottom: 2rem;
     }
 
     h2 {
       margin-bottom: 1.25rem;
       padding-bottom: 0.5rem;
-      border-bottom: 1px solid var(--color-border, #e0e0e0);
+      border-bottom: 1px solid #e0e0e0;
     }
 
-    /* ================= GENIE HERO ================= */
-
-    /* full width background */
-    .genie-hero-wrapper {
-      width: 100%;
-      margin: 5rem 0;
-    }
-
-    .genie-hero {
-      width: 100%;
-      padding: 4rem 0;
-    }
-
-    /* center content */
-    .genie-hero-inner {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 1rem;
-    }
-
-    /* search row */
-    .genie-search-row {
-      margin-top: 1.75rem;
+    .hero-search {
+      margin-top: 1.5rem;
       display: flex;
-      align-items: center;
       gap: 1rem;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .hero-actions {
+      margin-top: 1rem;
+      display: flex;
+      gap: 0.75rem;
       flex-wrap: wrap;
     }
 
-    .genie-search-btn {
-      height: 40px;
-      padding: 0 1.75rem;
-      white-space: nowrap;
+    .comparison-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
     }
 
-    @media (max-width: 768px) {
-      .genie-search-row {
-        flex-direction: column;
-        align-items: stretch;
-      }
+    .border-green {
+      border: 2px solid #4caf50;
+      padding: 1rem;
+    }
 
-      .genie-search-btn {
-        width: 100%;
+    .border-orange {
+      border: 2px solid #ff9800;
+      padding: 1rem;
+    }
+
+    @media (max-width: 900px) {
+      .comparison-grid {
+        grid-template-columns: 1fr;
       }
     }
   `,
 })
 export class OrganismsPage {
 
-  /* ================= HEADER NAV ================= */
   navigation: HeaderNavigationItem[] = [
     { label: 'Home', link: '/' },
     {
@@ -219,13 +244,11 @@ export class OrganismsPage {
     { label: 'Contact', link: '/contact' },
   ];
 
-  /* ================= HERO TOGGLE ================= */
   searchOptions: ToggleOption[] = [
     { label: 'Species', value: 'species', active: true },
     { label: 'Authority', value: 'authority' },
   ];
 
-  /* ================= FOOTER DATA ================= */
   socialLinks: LinkItem[] = [
     { name: 'X', url: 'https://x.com/upov', icon: 'twitter' },
     { name: 'LinkedIn', url: 'https://linkedin.com/company/upov', icon: 'linkedin' },
