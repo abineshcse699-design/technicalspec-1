@@ -4,8 +4,12 @@ import {
   HeaderNav,
   HeroSection,
   Footer,
+  SearchInput,
+  Button,
   type HeaderNavigationItem,
+  type ToggleOption,
 } from 'upov-ui';
+import { MatButton } from '@angular/material/button';
 
 @Component({
   selector: 'app-organisms',
@@ -15,68 +19,66 @@ import {
     HeaderNav,
     HeroSection,
     Footer,
+    SearchInput,
+    Button,
+    MatButton,
   ],
   template: `
-    <div class="grid-container">
-      <h1>Organisms</h1>
+    <!-- ================= HEADER ================= -->
+    <upov-header [navigation]="navigation"></upov-header>
 
-      <!-- ================= Header ================= -->
-      <section class="section">
-        <h2>Header</h2>
+    <!-- ================= HERO (GENIE DATABASE) ================= -->
+    <upov-hero-section
+      class="gradient-bg-lime-forest gradient-opacity-30 gradient-right-left"
+    >
+      <!-- Title -->
+      <h1 hero-title>GENIE Database</h1>
 
-        <upov-header [navigation]="navigation">
-        </upov-header>
-      </section>
+      <!-- Subtitle -->
+      <p hero-subtitle>
+        Search by specie or authority using the input below.
+      </p>
 
-      <!-- ================= Hero Section ================= -->
-      <section class="section">
-        <h2>Hero Section</h2>
+      <!-- Search + Toggle + Button -->
+      <div hero-content class="hero-search">
+        <upov-search-input
+          placeholder="Search"
+          [toggleOptions]="searchOptions">
+        </upov-search-input>
 
-        <upov-hero-section
-          title="Welcome to UPOV"
-          subtitle="The International Union for the Protection of New Varieties of Plants">
-        </upov-hero-section>
-      </section>
+        <button
+          matButton
+          upovButton="primary"
+          type="button"
+          class="search-button">
+          Search
+        </button>
+      </div>
+    </upov-hero-section>
 
-      <!-- Hero without subtitle -->
-      <section class="section">
-        <h3>Hero – Title Only</h3>
-
-        <upov-hero-section
-          title="Plant Variety Database">
-        </upov-hero-section>
-      </section>
-
-      <!-- ================= Footer ================= -->
-      <section class="section">
-        <h2>Footer</h2>
-
-        <upov-footer></upov-footer>
-      </section>
-    </div>
+    <!-- ================= FOOTER ================= -->
+    <upov-footer></upov-footer>
   `,
   styles: `
-    .section {
-      margin-bottom: 2.5rem;
+    /* HERO SEARCH LAYOUT – matches screenshot */
+    .hero-search {
+      margin-top: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
     }
 
-    h1 {
-      margin-bottom: 1.5rem;
-    }
-
-    h2 {
-      margin-bottom: 1rem;
-      padding-bottom: 0.5rem;
-      border-bottom: 1px solid var(--color-border, #e0e0e0);
-    }
-
-    h3 {
-      margin: 1rem 0;
+    .search-button {
+      height: 40px;
+      padding: 0 1.75rem;
+      white-space: nowrap;
     }
   `,
 })
 export class OrganismsPage {
 
+  /* Header navigation */
   navigation: HeaderNavigationItem[] = [
     { label: 'Home', link: '/' },
     {
@@ -89,14 +91,19 @@ export class OrganismsPage {
       ],
     },
     {
-      label: 'Members',
-      link: '/members',
+      label: 'Database',
+      link: '/database',
       children: [
-        { label: 'Member states', link: '/members/states' },
-        { label: 'Authorities', link: '/members/authorities' },
+        { label: 'Search', link: '/database/search' },
+        { label: 'Browse', link: '/database/browse' },
       ],
     },
-    { label: 'Resources', link: '/resources' },
     { label: 'Contact', link: '/contact' },
+  ];
+
+  /* Hero search toggle */
+  searchOptions: ToggleOption[] = [
+    { label: 'Species', value: 'species', active: true },
+    { label: 'Authority', value: 'authority' },
   ];
 }
