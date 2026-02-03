@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
+
 import {
   BadgeAtom,
   Button,
@@ -19,6 +20,8 @@ import {
   standalone: true,
   imports: [
     MatButtonModule,
+
+    // UPOV Atoms
     BadgeAtom,
     Button,
     ChipAtomComponent,
@@ -34,7 +37,7 @@ import {
     <div class="grid-container">
       <h1>Atoms</h1>
 
-      <!-- ================= LOGO ================= -->
+      <!-- Logo -->
       <section class="section">
         <h2>Logo</h2>
         <div class="demo-row">
@@ -42,6 +45,7 @@ import {
           <upov-logo size="medium"></upov-logo>
           <upov-logo size="large"></upov-logo>
         </div>
+
         <div class="demo-row dark-bg">
           <upov-logo size="small" light></upov-logo>
           <upov-logo size="medium" light></upov-logo>
@@ -49,7 +53,7 @@ import {
         </div>
       </section>
 
-      <!-- ================= BUTTON ================= -->
+      <!-- Buttons -->
       <section class="section">
         <h2>Button</h2>
 
@@ -69,7 +73,7 @@ import {
           <button matButton upovButton="primary" size="large">Large</button>
         </div>
 
-        <h3>Icon Buttons</h3>
+        <h3>Icon buttons</h3>
         <div class="demo-row">
           <button mat-icon-button upovButton="primary">
             <span class="material-icons">home</span>
@@ -83,15 +87,13 @@ import {
         </div>
       </section>
 
-      <!-- ================= BADGE ================= -->
+      <!-- Badge -->
       <section class="section">
         <h2>Badge</h2>
-
-        <h3>Variants</h3>
         <div class="demo-row">
-          <upov-badge-atom label="Success" variant="success"></upov-badge-atom>
-          <upov-badge-atom label="Info" variant="info"></upov-badge-atom>
-          <upov-badge-atom label="Warning" variant="warning"></upov-badge-atom>
+          <upov-badge-atom label="Updated" variant="success"></upov-badge-atom>
+          <upov-badge-atom label="New" variant="info"></upov-badge-atom>
+          <upov-badge-atom label="Pending" variant="warning"></upov-badge-atom>
           <upov-badge-atom label="Default" variant="default"></upov-badge-atom>
         </div>
 
@@ -102,10 +104,9 @@ import {
         </div>
       </section>
 
-      <!-- ================= CHIP ================= -->
+      <!-- Chip -->
       <section class="section">
         <h2>Chip</h2>
-
         <div class="demo-row">
           <upov-chip-atom label="Default"></upov-chip-atom>
           <upov-chip-atom label="Outlined" variant="outlined"></upov-chip-atom>
@@ -118,16 +119,9 @@ import {
           <upov-chip-atom label="Removable" [removable]="true"></upov-chip-atom>
           <upov-chip-atom label="Disabled" [disabled]="true"></upov-chip-atom>
         </div>
-
-        <h3>Sizes</h3>
-        <div class="demo-row">
-          <upov-chip-atom label="Small" size="small"></upov-chip-atom>
-          <upov-chip-atom label="Medium" size="medium"></upov-chip-atom>
-          <upov-chip-atom label="Large" size="large"></upov-chip-atom>
-        </div>
       </section>
 
-      <!-- ================= TOGGLE ================= -->
+      <!-- Toggle -->
       <section class="section">
         <h2>Toggle</h2>
         <upov-toggle
@@ -137,71 +131,23 @@ import {
         </upov-toggle>
       </section>
 
-      <!-- ================= INPUT ================= -->
-      <section class="section">
-        <h2>Input</h2>
-        <div class="demo-row">
-          <upov-input-atom label="Text" placeholder="Enter text"></upov-input-atom>
-          <upov-input-atom
-            label="Search"
-            type="search"
-            placeholder="Search..."
-            icon="search"
-            [clearable]="true">
-          </upov-input-atom>
-          <upov-input-atom label="Password" type="password"></upov-input-atom>
-          <upov-input-atom label="Disabled" [disabled]="true"></upov-input-atom>
-          <upov-input-atom label="Required" [required]="true"></upov-input-atom>
-        </div>
-      </section>
-
-      <!-- ================= ICON ================= -->
-      <section class="section">
-        <h2>Icon</h2>
-        <div class="demo-row">
-          <upov-icon-atom icon="home" size="small" color="primary"></upov-icon-atom>
-          <upov-icon-atom icon="settings" size="medium" color="accent"></upov-icon-atom>
-          <upov-icon-atom icon="favorite" size="large" color="warn"></upov-icon-atom>
-          <upov-icon-atom icon="info" size="medium"></upov-icon-atom>
-        </div>
-      </section>
-
-      <!-- ================= FLAG ================= -->
-      <section class="section">
-        <h2>Flag</h2>
-
-        <h3>Rectangle</h3>
-        <div class="demo-row">
-          <upov-flag-atom isoCode="ch" size="small"></upov-flag-atom>
-          <upov-flag-atom isoCode="fr" size="medium"></upov-flag-atom>
-          <upov-flag-atom isoCode="de" size="large"></upov-flag-atom>
-          <upov-flag-atom isoCode="jp" size="medium"></upov-flag-atom>
-          <upov-flag-atom isoCode="br" size="medium"></upov-flag-atom>
-        </div>
-
-        <h3>Circle</h3>
-        <div class="demo-row">
-          <upov-flag-atom isoCode="ch" shape="circle"></upov-flag-atom>
-          <upov-flag-atom isoCode="fr" shape="circle"></upov-flag-atom>
-          <upov-flag-atom isoCode="de" shape="circle"></upov-flag-atom>
-        </div>
-      </section>
-
-      <!-- ================= SPINNER ================= -->
+      <!-- Spinner -->
       <section class="section">
         <h2>Spinner</h2>
         <div class="demo-row">
-          <upov-spinner-atom mode="indeterminate" [diameter]="40"></upov-spinner-atom>
+          <upov-spinner-atom mode="indeterminate" [diameter]="40" color="primary"></upov-spinner-atom>
+          <upov-spinner-atom mode="indeterminate" [diameter]="40" color="accent"></upov-spinner-atom>
           <upov-spinner-atom
             mode="determinate"
             [diameter]="50"
             [value]="65"
+            color="primary"
             message="65% loaded">
           </upov-spinner-atom>
         </div>
       </section>
 
-      <!-- ================= TRUNCATED TEXT ================= -->
+      <!-- Truncated Text -->
       <section class="section">
         <h2>Truncated Text</h2>
         <div class="truncate-demo">
@@ -209,20 +155,30 @@ import {
             This is a very long text that should be truncated when it exceeds the available width.
           </upov-truncated-text>
         </div>
-        <div class="truncate-demo">
-          <upov-truncated-text>Short text</upov-truncated-text>
-        </div>
       </section>
     </div>
   `,
   styles: `
-    .section { margin-bottom: 3rem; }
+    .section {
+      margin-bottom: 2.5rem;
+    }
+
+    h1 {
+      margin-bottom: 1.5rem;
+    }
+
+    h2 {
+      margin-bottom: 1rem;
+      border-bottom: 1px solid #e0e0e0;
+      padding-bottom: 0.5rem;
+    }
 
     .demo-row {
       display: flex;
-      gap: 1.5rem;
       flex-wrap: wrap;
+      gap: 1.5rem;
       margin-top: 1rem;
+      align-items: center;
     }
 
     .dark-bg {
