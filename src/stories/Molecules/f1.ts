@@ -37,7 +37,7 @@ import {
       <!-- SEARCH INPUT PLAYGROUND -->
 
 
-<mat-expansion-panel expanded>
+<mat-expansion-panel>
           <mat-expansion-panel-header>
             <mat-panel-title>Search Input</mat-panel-title>
           </mat-expansion-panel-header>
@@ -131,7 +131,7 @@ import {
 
 
       <!-- AUTHORITY CARD -->
-       <mat-expansion-panel expanded>
+       <mat-expansion-panel >
           <mat-expansion-panel-header>
             <mat-panel-title>Authority Card</mat-panel-title>
           </mat-expansion-panel-header>
@@ -238,7 +238,7 @@ import {
 
 
    <!-- Species Card -->
-<mat-expansion-panel expanded>
+<mat-expansion-panel >
   <mat-expansion-panel-header>
     <mat-panel-title>Species Card</mat-panel-title>
   </mat-expansion-panel-header>
@@ -454,7 +454,7 @@ import {
       <!-- Filter Button -->
    <!-- Filter Button -->
 
- <mat-expansion-panel expanded>
+ <mat-expansion-panel >
           <mat-expansion-panel-header>
             <mat-panel-title>Filter Button</mat-panel-title>
           </mat-expansion-panel-header>
@@ -496,7 +496,7 @@ import {
 
      <!-- Filter Select -->
 
- <mat-expansion-panel expanded>
+ <mat-expansion-panel >
           <mat-expansion-panel-header>
             <mat-panel-title>Filter Select</mat-panel-title>
           </mat-expansion-panel-header>
@@ -568,7 +568,7 @@ import {
 
 
 <!-- Pagination -->
-  <mat-expansion-panel expanded>
+  <mat-expansion-panel>
           <mat-expansion-panel-header>
             <mat-panel-title>Pagination</mat-panel-title>
           </mat-expansion-panel-header>
@@ -627,7 +627,7 @@ import {
 </mat-expansion-panel >
 
 <!-- Autocomplete List -->
-   <mat-expansion-panel expanded>
+   <mat-expansion-panel >
           <mat-expansion-panel-header>
             <mat-panel-title>Autocomplete List</mat-panel-title>
           </mat-expansion-panel-header>
@@ -700,7 +700,7 @@ import {
   </mat-expansion-panel >
 
 
-  <mat-expansion-panel expanded>
+  <mat-expansion-panel>
           <mat-expansion-panel-header>
             <mat-panel-title>Empty State</mat-panel-title>
           </mat-expansion-panel-header>
