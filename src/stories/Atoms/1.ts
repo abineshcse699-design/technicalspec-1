@@ -56,242 +56,30 @@ import {
 </section>
 
 
-    <!-- Buttons -->
-<section class="section">
-  <h2>Button</h2>
-
-  <!-- Filled Buttons - Sizes -->
-  <h3>Filled Buttons – Sizes</h3>
-  <div class="demo-row items-center">
-    <button matButton upovButton size="large">Large</button>
-    <button matButton upovButton size="medium">Medium</button>
-    <button matButton upovButton size="small">Small</button>
-  </div>
-
-  <!-- Filled Buttons - Variants -->
-  <h3>Filled Buttons – Variants</h3>
-  <div class="demo-row items-center">
-    <button matButton upovButton>Default</button>
-    <button matButton upovButton="primary">Primary</button>
-    <button matButton upovButton="secondary">Secondary</button>
-    <button matButton upovButton="danger">Danger</button>
-    <button matButton upovButton="accent">Accent</button>
-  </div>
-
-  <!-- Text Buttons - Variants -->
-  <h3>Text Buttons – Variants</h3>
-  <div class="demo-row items-center">
-    <button matButton="text" upovButton>Default</button>
-    <button matButton="text" upovButton="primary">Primary</button>
-    <button matButton="text" upovButton="secondary">Secondary</button>
-    <button matButton="text" upovButton="danger">Danger</button>
-    <button matButton="text" upovButton="accent">Accent</button>
-  </div>
-
-  <!-- Buttons with Leading Icons -->
-  <h3>Buttons with Icons</h3>
-  <div class="demo-row items-center">
-    <button matButton upovButton="primary">
-      <span class="material-icons">favorite</span>
-      Like
-    </button>
-
-    <button matButton="text" upovButton="primary">
-      <span class="material-icons">download</span>
-      Download
-    </button>
-  </div>
-
-  <!-- Icon Only Buttons -->
-  <h3>Icon Only Buttons</h3>
-  <div class="demo-row items-center">
-    <button mat-icon-button upovButton aria-label="Edit">
-      <span class="material-icons">edit</span>
-    </button>
-
-    <button mat-icon-button upovButton="primary" aria-label="Favorite">
-      <span class="material-icons">favorite</span>
-    </button>
-
-    <button mat-icon-button upovButton="secondary" aria-label="Share">
-      <span class="material-icons">share</span>
-    </button>
-
-    <button mat-icon-button upovButton="danger" aria-label="Delete">
-      <span class="material-icons">delete</span>
-    </button>
-
-    <button mat-icon-button upovButton="accent" aria-label="Star">
-      <span class="material-icons">star</span>
-    </button>
-  </div>
-
-  <!-- Icon Only Buttons (Filled) -->
-  <h3>Icon Only Buttons – Filled</h3>
-  <div class="demo-row items-center">
-    <button mat-icon-button upovButton iconFilled aria-label="Edit">
-      <span class="material-icons">edit</span>
-    </button>
-
-    <button mat-icon-button upovButton="primary" iconFilled aria-label="Favorite">
-      <span class="material-icons">favorite</span>
-    </button>
-
-    <button mat-icon-button upovButton="secondary" iconFilled aria-label="Share">
-      <span class="material-icons">share</span>
-    </button>
-
-    <button mat-icon-button upovButton="danger" iconFilled aria-label="Delete">
-      <span class="material-icons">delete</span>
-    </button>
-
-    <button mat-icon-button upovButton="accent" iconFilled aria-label="Star">
-      <span class="material-icons">star</span>
-    </button>
-  </div>
-
-  <!-- Icon Only Buttons - Sizes -->
-  <h3>Icon Only Buttons – Sizes</h3>
-  <div class="demo-row items-center">
-    <button mat-icon-button upovButton="primary" size="small" aria-label="Small">
-      <span class="material-icons">settings</span>
-    </button>
-
-    <button mat-icon-button upovButton="primary" size="medium" aria-label="Medium">
-      <span class="material-icons">settings</span>
-    </button>
-
-    <button mat-icon-button upovButton="primary" size="large" aria-label="Large">
-      <span class="material-icons">settings</span>
-    </button>
-  </div>
-
-  //
-
-   <h3>Buttons with Leading Icons</h3>
-  <div class="demo-row items-center">
-    <button matButton upovButton="primary">
-      <span class="material-icons">save</span>
-      Save
-    </button>
-
-    <button matButton upovButton="secondary">
-      <span class="material-icons">cancel</span>
-      Cancel
-    </button>
-
-    <button matButton upovButton="danger">
-      <span class="material-icons">delete</span>
-      Delete
-    </button>
-  </div>
-
-  <!-- Buttons with Trailing Icons -->
-  <h3>Buttons with Trailing Icons</h3>
-  <div class="demo-row items-center">
-    <button matButton upovButton="primary">
-      Next
-      <span class="material-icons">arrow_forward</span>
-    </button>
-
-    <button matButton upovButton="secondary">
-      Open
-      <span class="material-icons">open_in_new</span>
-    </button>
-
-    <button matButton upovButton>
-      More
-      <span class="material-icons">expand_more</span>
-    </button>
-  </div>
-
-  <!-- Text Buttons with Icons -->
-  <h3>Text Buttons with Icons</h3>
-  <div class="demo-row items-center">
-    <button matButton="text" upovButton="primary">
-      <span class="material-icons">download</span>
-      Download
-    </button>
-
-    <button matButton="text" upovButton="secondary">
-      <span class="material-icons">upload</span>
-      Upload
-    </button>
-
-    <button matButton="text" upovButton>
-      <span class="material-icons">print</span>
-      Print
-    </button>
-  </div>
-
-  <!-- Icon Only Buttons -->
-  <h3>Icon-Only Buttons</h3>
-  <div class="demo-row items-center">
-    <button mat-icon-button upovButton aria-label="Edit">
-      <span class="material-icons">edit</span>
-    </button>
-
-    <button mat-icon-button upovButton="primary" aria-label="Favorite">
-      <span class="material-icons">favorite_border</span>
-    </button>
-
-    <button mat-icon-button upovButton="secondary" aria-label="Share">
-      <span class="material-icons">share</span>
-    </button>
-
-    <button mat-icon-button upovButton="danger" aria-label="Delete">
-      <span class="material-icons">delete</span>
-    </button>
-
-    <button mat-icon-button upovButton="accent" aria-label="Star">
-      <span class="material-icons">star_border</span>
-    </button>
-  </div>
-
-  <!-- Icon Only Buttons (Filled) -->
-  <h3>Icon-Only Buttons (Filled)</h3>
-  <div class="demo-row items-center">
-    <button mat-icon-button upovButton iconFilled aria-label="Edit">
-      <span class="material-icons">edit</span>
-    </button>
-
-    <button mat-icon-button upovButton="primary" iconFilled aria-label="Favorite">
-      <span class="material-icons">favorite</span>
-    </button>
-
-    <button mat-icon-button upovButton="secondary" iconFilled aria-label="Share">
-      <span class="material-icons">share</span>
-    </button>
-
-    <button mat-icon-button upovButton="danger" iconFilled aria-label="Delete">
-      <span class="material-icons">delete</span>
-    </button>
-
-    <button mat-icon-button upovButton="accent" iconFilled aria-label="Star">
-      <span class="material-icons">star</span>
-    </button>
-  </div>
-
-  <!-- Icon Only Buttons - Settings Example -->
-  <h3>Icon-Only Buttons – Settings</h3>
-  <div class="demo-row items-center">
-    <button mat-icon-button upovButton="primary" aria-label="Settings">
-      <span class="material-icons">settings</span>
-    </button>
-
-    <button mat-icon-button upovButton="primary" aria-label="Settings">
-      <span class="material-icons">settings</span>
-    </button>
-
-    <button mat-icon-button upovButton="primary" aria-label="Settings">
-      <span class="material-icons">settings</span>
-    </button>
-  </div>
-
-
-
-</section>
-
+      <!-- Buttons -->
+      <section class="section">
+        <h2>Button</h2>
+        <h3>Variants</h3>
+        <div class="demo-row">
+          <button matButton upovButton="primary">Primary</button>
+          <button matButton upovButton="secondary">Secondary</button>
+          <button matButton upovButton="default">Default</button>
+          <button matButton upovButton="danger">Danger</button>
+          <button matButton upovButton="accent">Accent</button>
+        </div>
+        <h3>Sizes</h3>
+        <div class="demo-row items-center ">
+          <button matButton upovButton="primary" size="small">Small</button>
+          <button matButton upovButton="primary" size="medium">Medium</button>
+          <button matButton upovButton="primary" size="large">Large</button>
+        </div>
+        <h3>Icon buttons</h3>
+        <div class="demo-row items-center">
+          <button mat-icon-button upovButton="primary"><span class="material-icons">home</span></button>
+          <button mat-icon-button upovButton="secondary"><span class="material-icons">settings</span></button>
+          <button mat-icon-button upovButton="danger"><span class="material-icons">delete</span></button>
+        </div>
+      </section>
 
     <!-- Badge -->
 <section class="section">
