@@ -1,0 +1,628 @@
+import {Component} from '@angular/core';
+import {
+  AuthorityCard,
+  AutocompleteList,
+  type AutocompleteItem,
+  type AutocompleteOption,
+  EmptyStateComponent,
+  FilterButtonComponent,
+  FilterSelect,
+  type FilterSelectOption,
+  PaginationComponent,
+  SearchInput,
+  SpeciesCard,
+  type ToggleOption,
+} from 'upov-ui';
+
+@Component({
+  selector: 'app-molecules',
+  imports: [
+    AuthorityCard,
+    AutocompleteList,
+    EmptyStateComponent,
+    FilterButtonComponent,
+    FilterSelect,
+    PaginationComponent,
+    SearchInput,
+    SpeciesCard,
+  ],
+  template: `
+    <div class="grid-container">
+      <h1>Molecules</h1>
+
+      <!-- Search Input -->
+
+      <!-- SEARCH INPUT PLAYGROUND -->
+      <section class="section">
+        <h2>Search Input</h2>
+
+        <!-- Simple -->
+        <h3>Simple</h3>
+        <div class="demo-constrained">
+          <upov-search-input
+            placeholder="Search..."
+            [clereable]="true">
+          </upov-search-input>
+        </div>
+
+        <!-- Autocomplete Strings -->
+        <h3>Autocomplete (Strings)</h3>
+        <div class="demo-constrained">
+          <upov-search-input
+            placeholder="Search countries..."
+            [clereable]="true"
+            [autocomplete]="countryStrings">
+          </upov-search-input>
+        </div>
+
+        <!-- Autocomplete Objects -->
+        <h3>Autocomplete (Objects)</h3>
+        <div class="demo-constrained">
+          <upov-search-input
+            placeholder="Search programming languages..."
+            [clereable]="true"
+            [autocomplete]="languageOptions">
+          </upov-search-input>
+        </div>
+
+        <!-- Auto Submit -->
+        <h3>Auto submit on select</h3>
+        <div class="demo-constrained">
+          <upov-search-input
+            placeholder="Quick search..."
+            [clereable]="true"
+            [submitOnOptionSelect]="true"
+            [autocomplete]="fruitOptions">
+          </upov-search-input>
+        </div>
+
+        <!-- Toggle Options -->
+        <h3>With Toggle Options</h3>
+        <div class="demo-constrained">
+          <upov-search-input
+            placeholder="Search products..."
+            [clereable]="true"
+            [toggleOptions]="productToggleOptions"
+            [autocomplete]="productOptions">
+          </upov-search-input>
+        </div>
+
+        <!-- Full Featured -->
+        <h3>Full Featured</h3>
+        <div class="demo-constrained">
+          <upov-search-input
+            placeholder="Search users..."
+            [clereable]="true"
+            [toggleOptions]="userToggleOptions"
+            [autocomplete]="userOptions">
+          </upov-search-input>
+        </div>
+
+        <!-- Not Clearable -->
+        <h3>Not Clearable</h3>
+        <div class="demo-constrained">
+          <upov-search-input
+            placeholder="Search..."
+            [clereable]="false"
+            [autocomplete]="simpleOptions">
+          </upov-search-input>
+        </div>
+
+        <!-- Accent Insensitive -->
+        <h3>Accent Insensitive Search</h3>
+        <div class="demo-constrained">
+          <upov-search-input
+            placeholder="Search cities..."
+            [clereable]="true"
+            [autocomplete]="cityOptions">
+          </upov-search-input>
+        </div>
+      </section>
+
+      <!-- AUTHORITY CARD -->
+<section class="section">
+  <h2>Authority Card</h2>
+
+
+  <div class="grid authority-grid">
+        <!-- France (Image version) -->
+    <upov-authority-card
+      countryName="France"
+      countryIso="FR"
+      flagUrl="https://flagcdn.com/w80/fr.png"
+      authorityName="INOV"
+      phone="+33 1 23 45 67 89"
+      email="contact@inov.fr"
+      coverageType="All genera and species">
+    </upov-authority-card>
+
+    <!-- Germany (Image version) -->
+    <upov-authority-card
+      countryName="Germany"
+      countryIso="DE"
+      flagUrl="https://flagcdn.com/w80/de.png"
+      authorityName="Bundessortenamt"
+      phone="+49 511 9566 50"
+      email="info@bundessortenamt.de"
+      coverageType="All genera and species">
+    </upov-authority-card>
+
+     <!-- Japan (Image version with contact) -->
+    <upov-authority-card
+      countryName="Japan"
+      countryIso="JP"
+      flagUrl="https://flagcdn.com/w80/jp.png"
+      authorityName="MAFF"
+
+      coverageType="All genera and species">
+    </upov-authority-card>
+
+    <!-- European Union -->
+    <upov-authority-card
+      countryName="European Union"
+      countryIso="EU"
+      authorityName="CPVO"
+      department="Community Plant Variety Office"
+      phone="+33 4 90 14 81 00"
+      email="cpvo@cpvo.europa.eu"
+      website="https://www.cpvo.europa.eu"
+      coverageType="All genera and species"
+      memberSince="2005">
+    </upov-authority-card>
+
+    <!-- United Kingdom -->
+    <upov-authority-card
+      countryName="United Kingdom of Great Britain and Northern Ireland"
+      countryIso="GB"
+      flagUrl="https://flagcdn.com/w80/gb.png"
+      authorityName="Animal and Plant Health Agency"
+      department="Plant Varieties and Seeds Department of the Environment, Food and Rural Affairs"
+      phone="+44 1223 342 350"
+      email="plant.varieties@apha.gov.uk"
+      website="https://www.gov.uk/government/organisations/animal-and-plant-health-agency"
+      coverageType="All genera and species of agricultural crops, vegetables, fruits, and ornamental plants"
+      memberSince="1968">
+    </upov-authority-card>
+
+    <!-- France (Image version) -->
+    <upov-authority-card
+      countryName="France"
+      countryIso="FR"
+      flagUrl="https://flagcdn.com/w80/fr.png"
+      authorityName="INOV"
+      phone="+33 1 23 45 67 89"
+      email="contact@inov.fr"
+      coverageType="All genera and species">
+    </upov-authority-card>
+
+    <!-- Germany (Image version) -->
+    <upov-authority-card
+      countryName="Germany"
+      countryIso="DE"
+      flagUrl="https://flagcdn.com/w80/de.png"
+      authorityName="Bundessortenamt"
+      phone="+49 511 9566 50"
+      email="info@bundessortenamt.de"
+      coverageType="All genera and species">
+    </upov-authority-card>
+
+    <!-- Japan (Image version with contact) -->
+    <upov-authority-card
+      countryName="Japan"
+      countryIso="JP"
+      flagUrl="https://flagcdn.com/w80/jp.png"
+      authorityName="MAFF"
+      phone="+81 3 3502 8111"
+      email="info@maff.go.jp"
+      coverageType="All genera and species">
+    </upov-authority-card>
+
+  </div>
+</section>
+
+
+      <!-- Species Card -->
+      <section class="section">
+        <h2>Species Card</h2>
+        <div class="grid gap-lg">
+          <div class="col-12 md:col-6 lg:col-4">
+            <upov-species-card
+              title="Rosa"
+              subtitle="Rose"
+              family="Rosaceae"
+              [badge]="42"
+              variants="Hybrid Tea, Floribunda, Grandiflora">
+            </upov-species-card>
+          </div>
+          <div class="col-12 md:col-6 lg:col-4">
+            <upov-species-card
+              title="Triticum aestivum"
+              subtitle="Common Wheat"
+              family="Poaceae"
+              [badge]="156"
+              variants="Winter, Spring">
+            </upov-species-card>
+          </div>
+          <div class="col-12 md:col-6 lg:col-4">
+            <upov-species-card
+              title="Malus domestica"
+              subtitle="Apple"
+              family="Rosaceae"
+              [badge]="89">
+            </upov-species-card>
+          </div>
+        </div>
+      </section>
+
+      <!-- Filter Button -->
+   <!-- Filter Button -->
+<section class="section">
+  <h2>Filter Button</h2>
+
+  <div class="demo-row">
+
+    <!-- Default -->
+    <upov-filter-button
+      [active]="false"
+      label="Show filters">
+    </upov-filter-button>
+
+    <!-- Active (Hide filters) -->
+    <upov-filter-button
+      [active]="true"
+      label="Show filters">
+    </upov-filter-button>
+
+    <!-- Custom label -->
+    <upov-filter-button
+      [active]="false"
+      label="Advanced filters">
+    </upov-filter-button>
+
+    <!-- Interactive -->
+    <upov-filter-button
+      [active]="filtersOpen"
+      label="Show filters"
+      (toggle)="onFilterToggle($event)">
+    </upov-filter-button>
+
+  </div>
+</section>
+
+
+     <!-- Filter Select -->
+<section class="section">
+  <h2>Filter Select</h2>
+
+  <div class="grid gap-md">
+
+    <!-- Simple -->
+    <div class="col-12 md:col-6 lg:col-4">
+      <h3>Simple</h3>
+      <upov-filter-select
+        placeholder="Family"
+        [options]="familyOptions">
+      </upov-filter-select>
+    </div>
+
+    <!-- With preselected values -->
+    <div class="col-12 md:col-6 lg:col-4">
+      <h3>With preselected values</h3>
+      <upov-filter-select
+        placeholder="Authority"
+        [options]="authorityOptions"
+        [value]="selectedAuthorities">
+      </upov-filter-select>
+    </div>
+
+    <!-- Single select -->
+    <div class="col-12 md:col-6 lg:col-4">
+      <h3>Single select</h3>
+      <upov-filter-select
+        placeholder="Crop type"
+        [multiple]="false"
+        [options]="cropTypeOptions">
+      </upov-filter-select>
+    </div>
+
+    <!-- Many selected -->
+    <div class="col-12 md:col-6 lg:col-4">
+      <h3>Many selected</h3>
+      <upov-filter-select
+        placeholder="Authority"
+        [options]="authorityOptionsExtended"
+        [value]="manySelectedAuthorities">
+      </upov-filter-select>
+    </div>
+
+    <!-- Empty options -->
+    <div class="col-12 md:col-6 lg:col-4">
+      <h3>Empty options</h3>
+      <upov-filter-select
+        placeholder="Family"
+        [options]="[]">
+      </upov-filter-select>
+    </div>
+
+    <!-- Large dataset -->
+    <div class="col-12 md:col-6 lg:col-4">
+      <h3>Large dataset</h3>
+      <upov-filter-select
+        placeholder="Countries"
+        [options]="largeCountryOptions">
+      </upov-filter-select>
+    </div>
+
+  </div>
+</section>
+
+      <!-- Pagination -->
+      <section class="section">
+        <h2>Pagination</h2>
+        <upov-pagination
+          [currentPage]="currentPage"
+          [totalItems]="150"
+          [itemsPerPage]="15"
+          (pageChange)="currentPage = $event">
+        </upov-pagination>
+      </section>
+
+      <!-- Autocomplete List -->
+      <section class="section">
+        <h2>Autocomplete List</h2>
+        <div class="grid gap-lg">
+          <div class="col-12 mt-[5px] md:col-4">
+            <h3>With items</h3>
+            <div class="autocomplete-demo">
+              <upov-autocomplete-list [items]="autocompleteItems"></upov-autocomplete-list>
+            </div>
+          </div>
+          <div class="col-12 md:col-4">
+            <h3>Loading</h3>
+            <div class="autocomplete-demo">
+              <upov-autocomplete-list [items]="[]" [loading]="true"></upov-autocomplete-list>
+            </div>
+          </div>
+          <div class="col-12 md:col-4">
+            <h3>Empty</h3>
+            <div class="autocomplete-demo">
+              <upov-autocomplete-list
+                [items]="[]"
+                emptyText="No species found"
+                emptyHint="Try a different search term">
+              </upov-autocomplete-list>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Empty State -->
+      <section class="section">
+        <h2>Empty State</h2>
+        <upov-empty-state
+          icon="search_off"
+          title="No results found"
+          subtitle="Try adjusting your search or filter criteria">
+        </upov-empty-state>
+      </section>
+    </div>
+  `,
+  styles: `
+    .section {
+      margin-bottom: 2.5rem;
+    }
+
+    h1 {
+      margin-bottom: 1.5rem;
+    }
+
+    h2 {
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--color-border, #e0e0e0);
+    }
+
+    h3 {
+      margin: 0.5rem 0;
+    }
+
+    .demo-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+
+    .demo-constrained {
+      max-width: 600px;
+    }
+
+        .section {
+      margin-bottom: 3rem;
+    }
+
+    h1 {
+      margin-bottom: 1.5rem;
+    }
+
+    h2 {
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--color-border, #e0e0e0);
+    }
+
+    .authority-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(520px, 1fr));
+      gap: 1.5rem;
+    }
+
+
+    .autocomplete-demo {
+      border: 1px solid var(--color-border, #e0e0e0);
+      border-radius: 4px;
+      max-height: 250px;
+      overflow: auto;
+    }
+
+    .authority-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(520px, 1fr));
+  gap: 1.5rem;
+}
+
+
+  `,
+})
+
+export class MoleculesPage {
+  currentPage = 1;
+
+
+  // 🔥 Filter Button interactive state
+  filtersOpen = false;
+
+  onFilterToggle(state: boolean) {
+    this.filtersOpen = state;
+    console.log('Filter toggled:', state);
+  }
+
+  countryStrings: string[] = [
+    'Afghanistan', 'Albania', 'Algeria', 'Argentina', 'Australia',
+    'Austria', 'Belgium', 'Brazil', 'Canada', 'Chile', 'China',
+    'Denmark', 'Egypt', 'Finland', 'France', 'Germany', 'India',
+    'Italy', 'Japan', 'Mexico', 'Netherlands', 'Norway',
+    'Spain', 'Sweden', 'Switzerland', 'United Kingdom', 'United States'
+  ];
+
+    languageOptions: AutocompleteOption[] = [
+    { value: 'TypeScript', description: 'Typed superset of JavaScript' },
+    { value: 'JavaScript', description: 'High-level programming language' },
+    { value: 'Python', description: 'General-purpose language' },
+    { value: 'Java', description: 'Object-oriented language' },
+    { value: 'C#', description: '.NET ecosystem language' },
+    { value: 'Go', description: 'Compiled, statically typed language' },
+    { value: 'Rust', description: 'Systems programming language' },
+  ];
+
+   fruitOptions: string[] = [
+    'Apple', 'Banana', 'Cherry', 'Date',
+    'Elderberry', 'Fig', 'Grape', 'Honeydew'
+  ];
+
+  productOptions: string[] = [
+    'Product A', 'Product B', 'Product C',
+    'Product D', 'Product E'
+  ];
+
+  userOptions: AutocompleteOption[] = [
+    { value: 'John Doe', description: 'Admin - john.doe@example.com' },
+    { value: 'Jane Smith', description: 'Member - jane.smith@example.com' },
+    { value: 'Bob Johnson', description: 'Member - bob.j@example.com' },
+    { value: 'Alice Williams', description: 'Admin - alice.w@example.com' },
+    { value: 'Charlie Brown', description: 'Guest - charlie.b@example.com' },
+  ];
+
+  simpleOptions: string[] = ['Option 1', 'Option 2', 'Option 3'];
+
+  cityOptions: string[] = [
+    'São Paulo', 'México City', 'Zürich', 'Montréal',
+    'København', 'Kraków', 'Malmö', 'Łódź',
+    'Bogotá', 'Córdoba'
+  ];
+
+  productToggleOptions: ToggleOption[] = [
+    { label: 'All', value: 'all', active: true },
+    { label: 'Active', value: 'active' },
+    { label: 'Archived', value: 'archived' },
+  ];
+
+  userToggleOptions: ToggleOption[] = [
+    { label: 'All Users', value: 'all', active: true },
+    { label: 'Admins', value: 'admin' },
+    { label: 'Members', value: 'member' },
+    { label: 'Guests', value: 'guest' },
+  ];
+
+
+
+  autocompleteOptions: AutocompleteOption[] = [
+    {value: 'Rosa', description: 'Rose'},
+    {value: 'Triticum', description: 'Wheat'},
+    {value: 'Zea mays', description: 'Maize'},
+    {value: 'Solanum tuberosum', description: 'Potato'},
+    {value: 'Malus domestica', description: 'Apple'},
+  ];
+
+  searchToggleOptions: ToggleOption[] = [
+    {label: 'All', value: 'all'},
+    {label: 'Genus', value: 'genus'},
+    {label: 'Species', value: 'species'},
+  ];
+
+  autocompleteItems: AutocompleteItem[] = [
+    {main: 'Rosa hybrida', sub: 'Hybrid rose'},
+    {main: 'Rosa canina', sub: 'Dog rose'},
+    {main: 'Rosa gallica', sub: 'French rose'},
+    {main: 'Rosa damascena', sub: 'Damask rose'},
+  ];
+
+  filterCountryOptions: FilterSelectOption[] = [
+    {value: 'ch', label: 'Switzerland'},
+    {value: 'fr', label: 'France'},
+    {value: 'de', label: 'Germany'},
+    {value: 'jp', label: 'Japan'},
+    {value: 'br', label: 'Brazil'},
+  ];
+
+  filterFamilyOptions: FilterSelectOption[] = [
+    {value: 'rosaceae', label: 'Rosaceae'},
+    {value: 'poaceae', label: 'Poaceae'},
+    {value: 'solanaceae', label: 'Solanaceae'},
+    {value: 'fabaceae', label: 'Fabaceae'},
+  ];
+
+
+  // ----- FILTER SELECT DATA -----
+
+familyOptions: FilterSelectOption[] = [
+  { value: 'rosaceae', label: 'Rosaceae' },
+  { value: 'poaceae', label: 'Poaceae' },
+  { value: 'fabaceae', label: 'Fabaceae' },
+];
+
+authorityOptions: FilterSelectOption[] = [
+  { value: 'EU', label: 'European Union' },
+  { value: 'US', label: 'United States' },
+  { value: 'JP', label: 'Japan' },
+];
+
+selectedAuthorities: string[] = ['EU', 'US'];
+
+cropTypeOptions: FilterSelectOption[] = [
+  { value: 'fruit', label: 'Fruit' },
+  { value: 'vegetable', label: 'Vegetable' },
+  { value: 'ornamental', label: 'Ornamental' },
+];
+
+authorityOptionsExtended: FilterSelectOption[] = [
+  { value: 'EU', label: 'European Union' },
+  { value: 'US', label: 'United States' },
+  { value: 'JP', label: 'Japan' },
+  { value: 'CN', label: 'China' },
+  { value: 'BR', label: 'Brazil' },
+  { value: 'AU', label: 'Australia' },
+];
+
+manySelectedAuthorities: string[] = ['EU', 'US', 'JP', 'CN'];
+
+largeCountryOptions: FilterSelectOption[] = Array.from(
+  { length: 30 },
+  (_, i) => ({
+    value: `c${i}`,
+    label: `Country ${i + 1}`,
+  })
+);
+
+
+}
