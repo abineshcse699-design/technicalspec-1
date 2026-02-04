@@ -60,6 +60,12 @@ import {
         </mat-expansion-panel>
 
 
+    <mat-expansion-panel>
+ <mat-expansion-panel-header>
+   <mat-panel-title>Button</mat-panel-title>
+  </mat-expansion-panel-header>
+
+
     <!-- Buttons -->
 <section class="section">
   <h2>Button</h2>
@@ -296,7 +302,7 @@ import {
 
 </section>
 
-
+</mat-expansion-panel>
     <!-- Badge -->
 <section class="section">
   <h2>Badge</h2>
