@@ -971,10 +971,11 @@ import {
 
 
 
-
-
-
       <!-- Icon -->
+       <mat-expansion-panel>
+  <mat-expansion-panel-header>
+    <mat-panel-title>Icons</mat-panel-title>
+  </mat-expansion-panel-header>
       <section class="section">
         <h2>Icon</h2>
         <div class="demo-row items-center">
@@ -984,29 +985,449 @@ import {
           <upov-icon-atom icon="search" size="medium" color="inherit"></upov-icon-atom>
           <upov-icon-atom icon="info" size="medium" color="primary"></upov-icon-atom>
         </div>
-      </section>
 
-      <!-- Flag -->
-      <section class="section">
-        <h2>Flag</h2>
-        <h3>Rectangle</h3>
-        <div class="demo-row items-center">
-          <upov-flag-atom isoCode="ch" alt="Switzerland" size="small"></upov-flag-atom>
-          <upov-flag-atom isoCode="fr" alt="France" size="medium"></upov-flag-atom>
-          <upov-flag-atom isoCode="de" alt="Germany" size="large"></upov-flag-atom>
-          <upov-flag-atom isoCode="jp" alt="Japan" size="medium"></upov-flag-atom>
-          <upov-flag-atom isoCode="br" alt="Brazil" size="medium"></upov-flag-atom>
-          <upov-flag-atom isoCode="ke" alt="Kenya" size="medium"></upov-flag-atom>
-        </div>
-        <h3>Circle</h3>
-        <div class="demo-row items-center">
-          <upov-flag-atom isoCode="ch" alt="Switzerland" shape="circle" size="small"></upov-flag-atom>
-          <upov-flag-atom isoCode="fr" alt="France" shape="circle" size="medium"></upov-flag-atom>
-          <upov-flag-atom isoCode="de" alt="Germany" shape="circle" size="large"></upov-flag-atom>
-          <upov-flag-atom isoCode="jp" alt="Japan" shape="circle" size="medium"></upov-flag-atom>
-          <upov-flag-atom isoCode="br" alt="Brazil" shape="circle" size="medium"></upov-flag-atom>
-        </div>
+          <!-- 1. Sizes -->
+    <h3>Sizes</h3>
+    <div class="demo-row items-center">
+      <upov-icon-atom icon="info" size="small"></upov-icon-atom>
+      <upov-icon-atom icon="info" size="medium"></upov-icon-atom>
+      <upov-icon-atom icon="info" size="large"></upov-icon-atom>
+    </div>
+
+    <!-- 2. Outline / Filled feel (same icon) -->
+    <h3>Outline vs Filled</h3>
+    <div class="demo-row items-center">
+      <upov-icon-atom icon="info"></upov-icon-atom>
+      <upov-icon-atom icon="info" class="material-icons"></upov-icon-atom>
+    </div>
+
+    <!-- 3. Common Icons -->
+    <h3>Common Icons</h3>
+    <div class="demo-row items-center">
+      <upov-icon-atom icon="search"></upov-icon-atom>
+      <upov-icon-atom icon="spa"></upov-icon-atom>
+      <upov-icon-atom icon="menu_book"></upov-icon-atom>
+      <upov-icon-atom icon="language"></upov-icon-atom>
+      <upov-icon-atom icon="gavel"></upov-icon-atom>
+      <upov-icon-atom icon="public"></upov-icon-atom>
+      <upov-icon-atom icon="location_on"></upov-icon-atom>
+      <upov-icon-atom icon="filter_list"></upov-icon-atom>
+      <upov-icon-atom icon="expand_more"></upov-icon-atom>
+      <upov-icon-atom icon="close"></upov-icon-atom>
+      <upov-icon-atom icon="arrow_back_ios_new"></upov-icon-atom>
+      <upov-icon-atom icon="business"></upov-icon-atom>
+    </div>
+
+    <!-- 4. Colors -->
+    <h3>Colors</h3>
+    <div
+      style="
+        display:flex;
+        gap:32px;
+        align-items:center;
+        background:#f5f5f5;
+        padding:24px;
+        border-radius:12px;
+      "
+    >
+      <div style="text-align:center">
+        <upov-icon-atom icon="check_circle" size="large" color="primary"></upov-icon-atom>
+        <p style="font-size:12px">Primary</p>
+      </div>
+
+      <div style="text-align:center">
+        <upov-icon-atom icon="favorite" size="large" color="accent"></upov-icon-atom>
+        <p style="font-size:12px">Accent</p>
+      </div>
+
+      <div style="text-align:center">
+        <upov-icon-atom icon="warning" size="large" color="warn"></upov-icon-atom>
+        <p style="font-size:12px">Warn</p>
+      </div>
+
+      <div
+        style="
+          text-align:center;
+          background:#1f4e45;
+          padding:16px;
+          border-radius:8px;
+        "
+      >
+        <upov-icon-atom
+          icon="star"
+          size="large"
+          color="inherit"
+          style="color:white">
+        </upov-icon-atom>
+        <p style="font-size:12px;color:white">Inherit</p>
+      </div>
+    </div>
+
+    <!-- 5. Status Icons -->
+    <h3>Status Icons</h3>
+    <div class="demo-row items-center">
+      <div style="display:flex;gap:8px;align-items:center">
+        <upov-icon-atom icon="check_circle" color="primary"></upov-icon-atom>
+        <span>Success</span>
+      </div>
+
+      <div style="display:flex;gap:8px;align-items:center">
+        <upov-icon-atom icon="error" color="warn"></upov-icon-atom>
+        <span>Error</span>
+      </div>
+
+      <div style="display:flex;gap:8px;align-items:center">
+        <upov-icon-atom icon="warning" color="accent"></upov-icon-atom>
+        <span>Warning</span>
+      </div>
+
+      <div style="display:flex;gap:8px;align-items:center">
+        <upov-icon-atom icon="info" color="primary"></upov-icon-atom>
+        <span>Info</span>
+      </div>
+    </div>
+
+    <!-- 6. Navigation Icons -->
+    <h3>Navigation Icons</h3>
+    <div class="demo-row items-center">
+      <upov-icon-atom icon="home"></upov-icon-atom>
+      <upov-icon-atom icon="arrow_back"></upov-icon-atom>
+      <upov-icon-atom icon="arrow_forward"></upov-icon-atom>
+      <upov-icon-atom icon="menu"></upov-icon-atom>
+      <upov-icon-atom icon="more_vert"></upov-icon-atom>
+      <upov-icon-atom icon="settings"></upov-icon-atom>
+      <upov-icon-atom icon="help"></upov-icon-atom>
+      <upov-icon-atom icon="logout"></upov-icon-atom>
+    </div>
+
+    <!-- 7. Action Icons -->
+    <h3>Action Icons</h3>
+    <div class="demo-row items-center">
+      <upov-icon-atom icon="edit"></upov-icon-atom>
+      <upov-icon-atom icon="delete" color="warn"></upov-icon-atom>
+      <upov-icon-atom icon="add"></upov-icon-atom>
+      <upov-icon-atom icon="remove"></upov-icon-atom>
+      <upov-icon-atom icon="save"></upov-icon-atom>
+      <upov-icon-atom icon="download"></upov-icon-atom>
+      <upov-icon-atom icon="upload"></upov-icon-atom>
+      <upov-icon-atom icon="share"></upov-icon-atom>
+    </div>
+
+    <!-- 8. Icons inside Buttons -->
+    <h3>Icons in Buttons</h3>
+    <div class="demo-row items-center">
+      <button matButton upovButton="primary" style="border-radius:12px">
+        <upov-icon-atom icon="search" size="small" color="inherit"></upov-icon-atom>
+        Search
+      </button>
+
+      <button matButton upovButton="primary" style="border-radius:12px">
+        <upov-icon-atom icon="download" size="small" color="inherit"></upov-icon-atom>
+        Download
+      </button>
+
+      <button matButton upovButton="primary" style="border-radius:12px">
+        <upov-icon-atom icon="filter_list" size="small" color="inherit"></upov-icon-atom>
+        Filter
+      </button>
+
+      <button matButton upovButton style="border-radius:12px">
+        Add Species
+        <upov-icon-atom icon="add" size="small"></upov-icon-atom>
+      </button>
+    </div>
+
+    <!-- 9. Icon-only Buttons -->
+    <h3>Icon-only Buttons</h3>
+    <div class="demo-row items-center">
+      <button mat-icon-button upovButton>
+        <upov-icon-atom icon="edit"></upov-icon-atom>
+      </button>
+
+      <button mat-icon-button upovButton="primary">
+        <upov-icon-atom icon="favorite"></upov-icon-atom>
+      </button>
+
+      <button mat-icon-button upovButton="danger">
+        <upov-icon-atom icon="delete"></upov-icon-atom>
+      </button>
+    </div>
+
+
       </section>
+</mat-expansion-panel>
+
+
+
+<!-- Flag -->
+<mat-expansion-panel>
+  <mat-expansion-panel-header>
+    <mat-panel-title>Flag</mat-panel-title>
+  </mat-expansion-panel-header>
+
+  <section class="section">
+    <h2>Flag</h2>
+
+    <!-- 1. Rectangle Flags -->
+    <h3>Rectangle</h3>
+    <div class="demo-row items-center">
+      <upov-flag-atom isoCode="NL" size="small"></upov-flag-atom>
+      <upov-flag-atom isoCode="NL" size="medium"></upov-flag-atom>
+      <upov-flag-atom isoCode="NL" size="large"></upov-flag-atom>
+      <upov-flag-atom isoCode="GB" size="large"></upov-flag-atom>
+    </div>
+
+    <!-- 2. Circle Flags -->
+    <h3>Circle</h3>
+    <div class="demo-row items-center">
+      <upov-flag-atom isoCode="NL" shape="circle" size="small"></upov-flag-atom>
+      <upov-flag-atom isoCode="FR" shape="circle" size="medium"></upov-flag-atom>
+      <upov-flag-atom isoCode="DE" shape="circle" size="large"></upov-flag-atom>
+    </div>
+
+    <!-- 3. Sizes Comparison -->
+    <h3>Sizes</h3>
+    <div class="demo-row items-center">
+      <upov-flag-atom isoCode="FR" size="small"></upov-flag-atom>
+      <upov-flag-atom isoCode="FR" size="medium"></upov-flag-atom>
+      <upov-flag-atom isoCode="FR" size="large"></upov-flag-atom>
+    </div>
+
+    <!-- 4. Fallback / Invalid -->
+    <h3>Fallback</h3>
+    <div class="demo-row items-center">
+      <upov-flag-atom isoCode="XX" size="medium"></upov-flag-atom>
+      <upov-flag-atom isoCode="" size="medium"></upov-flag-atom>
+    </div>
+
+    <!-- 5. Country Grid -->
+    <h3>Country Grid</h3>
+    <div
+      style="
+        display:grid;
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+        gap:16px;
+      "
+    >
+      <div class="flag-card">
+        <upov-flag-atom isoCode="NL" size="large"></upov-flag-atom>
+        <p>Netherlands</p>
+        <span>NL</span>
+      </div>
+
+      <div class="flag-card">
+        <upov-flag-atom isoCode="FR" size="large"></upov-flag-atom>
+        <p>France</p>
+        <span>FR</span>
+      </div>
+
+      <div class="flag-card">
+        <upov-flag-atom isoCode="DE" size="large"></upov-flag-atom>
+        <p>Germany</p>
+        <span>DE</span>
+      </div>
+
+      <div class="flag-card">
+        <upov-flag-atom isoCode="BE" size="large"></upov-flag-atom>
+        <p>Belgium</p>
+        <span>BE</span>
+      </div>
+
+      <div class="flag-card">
+        <upov-flag-atom isoCode="ES" size="large"></upov-flag-atom>
+        <p>Spain</p>
+        <span>ES</span>
+      </div>
+
+      <div class="flag-card">
+        <upov-flag-atom isoCode="IT" size="large"></upov-flag-atom>
+        <p>Italy</p>
+        <span>IT</span>
+      </div>
+
+      <div class="flag-card">
+        <upov-flag-atom isoCode="PL" size="large"></upov-flag-atom>
+        <p>Poland</p>
+        <span>PL</span>
+      </div>
+
+      <div class="flag-card">
+        <upov-flag-atom isoCode="AT" size="large"></upov-flag-atom>
+        <p>Austria</p>
+        <span>AT</span>
+      </div>
+    </div>
+
+    <!-- 6. Authority Card -->
+    <h3>In Authority Card</h3>
+    <div class="authority-card">
+      <upov-flag-atom isoCode="NL" shape="circle" size="medium"></upov-flag-atom>
+      <div>
+        <strong>Netherlands</strong>
+        <p>(NL)</p>
+        <span>Board for Plant Varieties</span>
+      </div>
+    </div>
+
+    <!-- 7. Flags in Table -->
+    <h3>In Table</h3>
+    <table class="flag-table">
+      <thead>
+        <tr>
+          <th>Country</th>
+          <th>ISO</th>
+          <th>Species</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <div class="flag-row">
+              <upov-flag-atom isoCode="NL" size="small"></upov-flag-atom>
+              Netherlands
+            </div>
+          </td>
+          <td>NL</td>
+          <td>1,234</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="flag-row">
+              <upov-flag-atom isoCode="FR" size="small"></upov-flag-atom>
+              France
+            </div>
+          </td>
+          <td>FR</td>
+          <td>987</td>
+        </tr>
+        <tr>
+          <td>
+            <div class="flag-row">
+              <upov-flag-atom isoCode="DE" size="small"></upov-flag-atom>
+              Germany
+            </div>
+          </td>
+          <td>DE</td>
+          <td>856</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- 8. Flags inside Chips -->
+    <h3>In Filter Chips</h3>
+    <div class="demo-row">
+      <div class="flag-chip">
+        <upov-flag-atom isoCode="NL" size="small" shape="circle"></upov-flag-atom>
+        Netherlands
+        <span>×</span>
+      </div>
+
+      <div class="flag-chip">
+        <upov-flag-atom isoCode="FR" size="small" shape="circle"></upov-flag-atom>
+        France
+        <span>×</span>
+      </div>
+
+      <div class="flag-chip">
+        <upov-flag-atom isoCode="DE" size="small" shape="circle"></upov-flag-atom>
+        Germany
+        <span>×</span>
+      </div>
+    </div>
+
+
+    <!-- UPOV Member States -->
+<h3>UPOV Member States</h3>
+
+<div
+  style="
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 16px;
+  "
+>
+  <div class="member-card">
+    <upov-flag-atom isoCode="US" size="medium"></upov-flag-atom>
+    <span>United States</span>
+  </div>
+
+  <div class="member-card">
+    <upov-flag-atom isoCode="CA" size="medium"></upov-flag-atom>
+    <span>Canada</span>
+  </div>
+
+  <div class="member-card">
+    <upov-flag-atom isoCode="JP" size="medium"></upov-flag-atom>
+    <span>Japan</span>
+  </div>
+
+  <div class="member-card">
+    <upov-flag-atom isoCode="AU" size="medium"></upov-flag-atom>
+    <span>Australia</span>
+  </div>
+
+  <div class="member-card">
+    <upov-flag-atom isoCode="NZ" size="medium"></upov-flag-atom>
+    <span>New Zealand</span>
+  </div>
+
+  <div class="member-card">
+    <upov-flag-atom isoCode="KR" size="medium"></upov-flag-atom>
+    <span>South Korea</span>
+  </div>
+
+  <div class="member-card">
+    <upov-flag-atom isoCode="BR" size="medium"></upov-flag-atom>
+    <span>Brazil</span>
+  </div>
+
+  <div class="member-card">
+    <upov-flag-atom isoCode="CN" size="medium"></upov-flag-atom>
+    <span>China</span>
+  </div>
+</div>
+
+
+<!-- Flag States -->
+<h3>Flag States</h3>
+
+<div
+  style="
+    background: #f7f7f7;
+    padding: 20px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    gap: 24px;
+  "
+>
+  <div>
+    <upov-flag-atom isoCode="NL" size="medium"></upov-flag-atom>
+    <p style="margin-top: 8px; font-size: 13px;">Valid (NL)</p>
+  </div>
+
+  <div>
+    <upov-flag-atom isoCode="XX" size="medium"></upov-flag-atom>
+    <p style="margin-top: 8px; font-size: 13px;">Invalid (XX)</p>
+  </div>
+
+  <div>
+    <upov-flag-atom isoCode="QZ" size="medium"></upov-flag-atom>
+    <p style="margin-top: 8px; font-size: 13px;">Special (QZ)</p>
+  </div>
+
+  <div>
+    <upov-flag-atom isoCode="" size="medium"></upov-flag-atom>
+    <p style="margin-top: 8px; font-size: 13px;">Empty</p>
+  </div>
+</div>
+
+
+  </section>
+
+
+</mat-expansion-panel>
 
       <!-- Spinner -->
       <section class="section">
@@ -1122,6 +1543,90 @@ import {
   border-radius: 8px;
 }
 
+
+
+.flag-card {
+  text-align: center;
+  padding: 12px;
+  background: white;
+  border-radius: 6px;
+}
+
+.flag-card p {
+  margin: 8px 0 2px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.flag-card span {
+  font-size: 11px;
+  color: #666;
+}
+
+.authority-card {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  background: white;
+  padding: 16px;
+  border-radius: 8px;
+  max-width: 320px;
+}
+
+.authority-card p {
+  margin: 2px 0;
+  font-size: 12px;
+  color: #666;
+}
+
+.authority-card span {
+  font-size: 13px;
+}
+
+.flag-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+}
+
+.flag-table th,
+.flag-table td {
+  padding: 12px;
+  text-align: left;
+}
+
+.flag-table thead {
+  background: #f5f5f5;
+}
+
+.flag-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.flag-chip {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  background: #f5f5f5;
+  border-radius: 16px;
+  font-size: 13px;
+}
+
+.flag-chip span {
+  cursor: pointer;
+}
+.member-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: white;
+  padding: 14px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+}
 
 
 
